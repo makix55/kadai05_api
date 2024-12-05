@@ -1,0 +1,111 @@
+/* 全体的なスタイル */
+body {
+    background-color: #001f3d;
+    /* 夜空の色 (濃い青) */
+    color: white;
+    /* 白い文字 */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* 画面全体の高さを確保 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* 画面からはみ出す雪を隠す */
+    text-align: center;
+}
+
+/* タイトルのスタイル */
+h1 {
+    color: white;
+    font-size: 18px;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+
+/* コンテナのスタイル */
+.container {
+    text-align: center;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px;
+    /* コンテナの最大幅 */
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* 雪のスタイル */
+.snowflake {
+    position: fixed;
+    top: -10px;
+    /* 上から降りてくるように設定 */
+    color: white;
+    font-size: 2rem;
+    /* サイズを大きく */
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+        /* 画面の下まで降りる */
+    }
+}
+
+/* 検索バーとボタンを横並びに配置 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* ボタンとインプットフィールドのスタイル */
+input,
+button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    width: 200px;
+    /* 入力欄の幅を設定 */
+}
+
+button {
+    background-color: #32EEFF;
+    color: white;
+    cursor: pointer;
+    width: 80px;
+    /* ボタンの幅を設定 */
+}
+
+button:hover {
+    background-color: #6495ED;
+}
+
+/* 検索結果のリスト */
+.list {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffe5;
+    border-radius: 10px;
+    text-align: left;
+    /* 左寄せに変更 */
+    width: 300px;
+    /* 検索結果エリアの幅を小さく設定 */
+    margin-left: auto;
+    margin-right: auto;
+    color:black;
+    font-size: 14px;
+}

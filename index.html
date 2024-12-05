@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポケモンAPI検索</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+
+<body>
+  <div class="container">
+    <h1>ポケモンキャラクター検索</h1>
+    <input type="text" id="pokemon-name" placeholder="ポケモン名をカタカナで入力" />
+    <button id="aa">検索</button>
+    <div class="list"></div>
+  </div>
+
+  <!-- jQueryの読み込み -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- アプリケーションスクリプト -->
+  <script src="js/app.js" defer></script>
+
+  <!-- 雪のエフェクト -->
+  <script>
+    // 雪を生成する関数
+    function createSnowflake() {
+      const snowflake = document.createElement("div");
+      snowflake.classList.add("snowflake");
+      snowflake.textContent = "❄"; // 雪の結晶
+
+      // ランダムな位置、サイズ、速度を設定
+      const size = Math.random() * 1.5 + 0.5; // サイズ
+      const position = Math.random() * window.innerWidth; // 横位置
+      const duration = Math.random() * 5 + 3; // 落下速度（少し遅めに調整）
+
+      snowflake.style.left = `${position}px`;
+      snowflake.style.fontSize = `${size}rem`;
+      snowflake.style.animationDuration = `${duration}s`;
+
+      document.body.appendChild(snowflake);
+
+      // アニメーション終了後に削除
+      setTimeout(() => {
+        snowflake.remove();
+      }, duration * 1000);
+    }
+
+    // 定期的に雪を降らせる
+    setInterval(createSnowflake, 200);
+  </script>
+</body>
+
+</html>
