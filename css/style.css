@@ -109,3 +109,10 @@ button:hover {
     color:black;
     font-size: 14px;
 }
+
+p {
+    line-height: 1.2;
+    /* フォントサイズの1.2倍の行間 */
+    margin-bottom: 1mm;
+    /* 各段落の間に1mmのスペース */
+}
